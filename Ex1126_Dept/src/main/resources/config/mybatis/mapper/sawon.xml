@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="s">
+	<select id="select_list" resultType="sawon" parameterType="int">
+		select * from sawon where deptno=#{deptno}
+	</select>
+
+	<select id="select_sawon" resultType="sawon" parameterType="int">
+		select * from sawon where sabun=#{sabun}
+	</select>
+	
+	<delete id="delete_sawon" parameterType="int">
+		delete from sawon where sabun=#{sabun}
+	</delete>
+	
+	<update id="update_sawon" parameterType="sawon">
+		update sawon set saname=#{saname}, sagen=#{sagen}, deptno=#{deptno}, sajob=#{sajob}, samgr=#{samgr}, sapay=#{sapay} where sabun=#{sabun}
+	</update>
+	
+	<insert id="insert_sawon" parameterType="sawon">
+		insert into sawon values(seq_sawon_sabun.nextval, #{saname}, #{sagen}, #{deptno}, #{sajob}, sysdate, #{samgr}, #{sapay})
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
