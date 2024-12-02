@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 	
 	<update id="update_sawon" parameterType="sawon">
-		update sawon set saname=#{saname}, sagen=#{sagen}, deptno=#{deptno}, sajob=#{sajob}, samgr=#{samgr}, sapay=#{sapay} where sabun=#{sabun}
+		update sawon set saname=#{saname}, deptno=#{deptno}, sajob=#{sajob}, samgr=#{samgr}, sapay=#{sapay} where sabun=#{sabun}
 	</update>
 	
 	<insert id="insert_sawon" parameterType="sawon">

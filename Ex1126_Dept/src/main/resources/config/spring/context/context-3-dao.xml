@@ -10,4 +10,8 @@
 	<bean id="sawon_daoBean" class="dao.SawonDAO">
 		<property name="sqlSession" ref="sqlSessionBean"></property>
 	</bean>
+	
+	<bean id="gogek_daoBean" class="dao.GogekDAO">
+		<property name="sqlSession" ref="sqlSessionBean"></property>
+	</bean>
 </beans>

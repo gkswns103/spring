@@ -8,6 +8,18 @@
 <title>Insert title here</title>
 
 <script>
+
+	window.onload = function() {
+		let arr = [10,20,30,40,50];
+		let selector = document.getElementById("selector");
+		
+		for(let i =0; i < arr.length; i++){
+			if(arr[i] == "${vo.deptno}"){
+				selector[i].selected = true;
+			}
+		}
+	}
+
 	function upd(f) {
 		if(!confirm("수정할겨?")){
 			return;
@@ -25,13 +37,19 @@
 				<th>이름</th>
 				<td><input name="saname" value="${vo.saname}"></td>
 			</tr>
-			<tr>
-				<th>성별</th>
-				<td><input name="sagen" value="${vo.sagen}"></td>
-			</tr>
+
 			<tr>
 				<th>부서번호</th>
-				<td><input name="deptno" value="${vo.deptno}"></td>
+				<td>
+					<select name="deptno" id="selector">
+						<option value="">부서를 선택하세요</option>
+						<option value="10">총무부</option>
+						<option value="20">영업부</option>
+						<option value="30">전산실</option>
+						<option value="40">관리부</option>
+						<option value="50">경리부</option>
+					</select>
+				</td>
 			</tr>
 			<tr>
 				<th>직종</th>

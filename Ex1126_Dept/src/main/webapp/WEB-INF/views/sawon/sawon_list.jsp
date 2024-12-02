@@ -25,7 +25,9 @@
 		<c:forEach var="vo" items="${list}">
 			<tr>
 				<td>${vo.sabun}</td>
-				<td>${vo.saname}</td>
+				<td>
+					<a href="#" onclick="location.href='gogek_list.do?sabun=${vo.sabun}'">${vo.saname}</a>
+				</td>
 				<td>${vo.sagen}</td>
 				<td>${vo.deptno}</td>
 				<td>${vo.sajob}</td>

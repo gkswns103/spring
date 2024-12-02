@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="v">
+	<select id="select_list" resultType="visit" parameterType="java.util.Map">
+		select * from 
+		( select rank() over( order by idx Desc ) no, v.*
+			from visit v )
+			where no between #{start} and #{end}
+	</select>
+	
+	<!-- 전체 게시글 수 -->
+	<select id="visit_count" resultType="int">
+		select COUNT(*) from visit
+	</select>
+	
+	<select id="select_one" parameterType="int" resultType="visit">
+		select * from visit where idx=#{idx}
+	</select>
+	
+	<insert id="insert_visit" parameterType="visit">
+		insert into visit values(seq_visit_idx.nextval,#{name},#{content},#{pwd},#{ip},sysdate,#{filename})
+	</insert>
+	
+	<update id="update_visit" parameterType="visit">
+		update visit set name=#{name}, content=#{content} where idx=#{idx}
+	</update>
+	
+	<delete id="delete_visit" parameterType="int">
+		delete from visit where idx=#{idx}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

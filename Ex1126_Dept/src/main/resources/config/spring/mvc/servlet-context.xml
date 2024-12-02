@@ -24,4 +24,8 @@
 	<beans:bean class="controller.SawonController">
 		<beans:constructor-arg ref="sawon_daoBean"></beans:constructor-arg>
 	</beans:bean>
+	
+	<beans:bean class="controller.GogekController">
+		<beans:constructor-arg ref="gogek_daoBean"></beans:constructor-arg>
+	</beans:bean>
 </beans:beans>
